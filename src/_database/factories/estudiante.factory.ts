@@ -1,11 +1,10 @@
-import { Factory } from '@mikro-orm/seeder';
-import Faker from 'faker';
+import { Factory, Faker } from '@mikro-orm/seeder';
 import { Estudiante } from './../../estudiante/estudiante.entity';
 
 export class EstudianteFactory extends Factory<Estudiante>{
     model = Estudiante;
 
-    protected definition( faker : typeof Faker ): Partial<Estudiante> {
+    protected definition( faker : Faker ): Partial<Estudiante> {
         return{
             nombre : faker.name.findName(),
             apellidoPaterno : faker.name.lastName(),

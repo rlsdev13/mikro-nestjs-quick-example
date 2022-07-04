@@ -1,5 +1,8 @@
 {
-  "namespaces": [],
+  "namespaces": [
+    "public"
+  ],
+  "name": "public",
   "tables": [
     {
       "columns": {
@@ -20,6 +23,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "fecha_fin": {
@@ -29,6 +33,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "created_at": {
@@ -38,6 +43,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "updated_at": {
@@ -47,10 +53,12 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         }
       },
       "name": "semestre",
+      "schema": "public",
       "indexes": [
         {
           "keyName": "semestre_pkey",
@@ -62,6 +70,7 @@
           "unique": true
         }
       ],
+      "checks": [],
       "foreignKeys": {}
     },
     {
@@ -119,6 +128,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "updated_at": {
@@ -128,10 +138,12 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         }
       },
       "name": "estudiante",
+      "schema": "public",
       "indexes": [
         {
           "columnNames": [
@@ -152,6 +164,7 @@
           "unique": true
         }
       ],
+      "checks": [],
       "foreignKeys": {}
     },
     {
@@ -200,6 +213,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "updated_at": {
@@ -209,10 +223,12 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         }
       },
       "name": "asignatura",
+      "schema": "public",
       "indexes": [
         {
           "columnNames": [
@@ -233,6 +249,7 @@
           "unique": true
         }
       ],
+      "checks": [],
       "foreignKeys": {}
     },
     {
@@ -290,6 +307,7 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         },
         "updated_at": {
@@ -299,10 +317,12 @@
           "autoincrement": false,
           "primary": false,
           "nullable": false,
+          "length": 6,
           "mappedType": "datetime"
         }
       },
       "name": "evaluacion",
+      "schema": "public",
       "indexes": [
         {
           "keyName": "evaluacion_pkey",
@@ -314,17 +334,18 @@
           "unique": true
         }
       ],
+      "checks": [],
       "foreignKeys": {
         "evaluacion_id_asignatura_uuid_foreign": {
           "constraintName": "evaluacion_id_asignatura_uuid_foreign",
           "columnNames": [
             "id_asignatura_uuid"
           ],
-          "localTableName": "evaluacion",
+          "localTableName": "public.evaluacion",
           "referencedColumnNames": [
             "uuid"
           ],
-          "referencedTableName": "asignatura",
+          "referencedTableName": "public.asignatura",
           "updateRule": "cascade"
         },
         "evaluacion_id_estudiante_uuid_foreign": {
@@ -332,11 +353,11 @@
           "columnNames": [
             "id_estudiante_uuid"
           ],
-          "localTableName": "evaluacion",
+          "localTableName": "public.evaluacion",
           "referencedColumnNames": [
             "uuid"
           ],
-          "referencedTableName": "estudiante",
+          "referencedTableName": "public.estudiante",
           "updateRule": "cascade"
         },
         "evaluacion_id_semestre_uuid_foreign": {
@@ -344,11 +365,11 @@
           "columnNames": [
             "id_semestre_uuid"
           ],
-          "localTableName": "evaluacion",
+          "localTableName": "public.evaluacion",
           "referencedColumnNames": [
             "uuid"
           ],
-          "referencedTableName": "semestre",
+          "referencedTableName": "public.semestre",
           "updateRule": "cascade"
         }
       }
