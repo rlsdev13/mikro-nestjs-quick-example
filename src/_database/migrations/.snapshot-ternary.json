@@ -16,6 +16,15 @@
           "default": "uuid_generate_v4()",
           "mappedType": "uuid"
         },
+        "nombre": {
+          "name": "nombre",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "string"
+        },
         "fecha_inicio": {
           "name": "fecha_inicio",
           "type": "timestamptz(0)",

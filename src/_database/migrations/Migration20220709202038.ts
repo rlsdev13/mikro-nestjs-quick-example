@@ -1,9 +1,9 @@
 import { Migration } from '@mikro-orm/migrations';
 
-export class Migration20220704034047 extends Migration {
+export class Migration20220709202038 extends Migration {
 
   async up(): Promise<void> {
-    this.addSql('create table "semestre" ("uuid" uuid not null default uuid_generate_v4(), "fecha_inicio" timestamptz(0) not null, "fecha_fin" timestamptz(0) not null, "created_at" timestamptz(0) not null, "updated_at" timestamptz(0) not null);');
+    this.addSql('create table "semestre" ("uuid" uuid not null default uuid_generate_v4(), "nombre" varchar(255) not null, "fecha_inicio" timestamptz(0) not null, "fecha_fin" timestamptz(0) not null, "created_at" timestamptz(0) not null, "updated_at" timestamptz(0) not null);');
     this.addSql('alter table "semestre" add constraint "semestre_pkey" primary key ("uuid");');
 
     this.addSql('create table "estudiante" ("uuid" uuid not null default uuid_generate_v4(), "nombre" varchar(255) not null, "apellido_paterno" varchar(255) not null, "apellido_materno" varchar(255) not null, "correo" varchar(255) not null, "created_at" timestamptz(0) not null, "updated_at" timestamptz(0) not null);');

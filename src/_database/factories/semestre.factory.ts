@@ -6,6 +6,7 @@ export class SemestreFactory extends Factory<Semestre>{
 
     protected definition( faker: Faker ): Partial<Semestre> {
         return{
+            nombre : `semestre ${faker.datatype.number({ min : 1, max : 10})}`,
             fechaInicio : faker.date.past(),
             fechaFin : faker.date.future(),   
         }        
