@@ -1,8 +1,13 @@
-import { Estudiante } from './estudiante.entity';
 import { Module } from '@nestjs/common';
-import { MikroOrmModule } from '@mikro-orm/nestjs';
+import { EstudianteController } from './estudiante.controller';
+import { EstudianteService } from './estudiante.service';
+import { OrmModule } from '../orm/orm.module';
 
 @Module({
-    imports : [ MikroOrmModule.forFeature([ Estudiante ]) ],
+    imports : [ 
+        OrmModule
+    ],
+    controllers: [EstudianteController],
+    providers: [EstudianteService],
 })
 export class EstudianteModule {}
