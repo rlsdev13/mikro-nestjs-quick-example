@@ -1,0 +1,10 @@
+@host = http://localhost:3000
+
+### Get all
+GET {{host}}/semestre
+
+### Get by id
+GET {{host}}/semestre/625456c3e164693e4db4f672
+
+### Delete by id
+DELETE {{host}}/semestre/624f4399390d4549d357203c
