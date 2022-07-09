@@ -6,6 +6,7 @@ import { EstudianteModule } from './estudiante/estudiante.module';
 import { SemestreModule } from './semestre/semestre.module';
 import { AsignaturaModule } from './asignatura/asignatura.module';
 import { EvaluacionModule } from './evaluacion/evaluacion.module';
+import { OrmModule } from './orm/orm.module';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { EvaluacionModule } from './evaluacion/evaluacion.module';
     EstudianteModule, 
     SemestreModule, 
     AsignaturaModule,  
-    EvaluacionModule
+    EvaluacionModule, OrmModule
   ],
   controllers: [AppController],
   providers: [AppService],
