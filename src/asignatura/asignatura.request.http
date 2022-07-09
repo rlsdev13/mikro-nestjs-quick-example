@@ -1,0 +1,17 @@
+@host = http://localhost:3000
+
+### Get all asignaturas
+GET {{host}}/asignatura
+
+### Get asignatura by ID
+GET {{host}}/asignatura/5465asd21asd64das
+
+### Create asignatura
+POST {{host}}/asignatura
+Content-Type: application/json
+
+{
+    "nombre" : "Matematicas",
+    "codigo" : "Mat",
+    "creditosMinimos" : 90 
+}

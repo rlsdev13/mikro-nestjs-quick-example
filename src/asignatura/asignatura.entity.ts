@@ -1,5 +1,5 @@
-import { Evaluacion } from './../evaluacion/evaluacion.entity';
 import { Entity, Property, PrimaryKey, Unique, OneToMany, Collection} from '@mikro-orm/core';
+import { Evaluacion } from './../evaluacion/evaluacion.entity';
 
 @Entity()
 export class Asignatura{

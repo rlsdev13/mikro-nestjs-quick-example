@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AsignaturaService } from './asignatura.service';
+import { AsignaturaDto } from './dtos/asignatura.dto';
 
 @Controller('asignatura')
 export class AsignaturaController {
@@ -10,6 +11,11 @@ export class AsignaturaController {
     @Get()
     getAll(){
         return this.asignaturaService.getAll();
+    }
+
+    @Post()
+    create(@Body() dataAsignatura : AsignaturaDto ){
+        return this.asignaturaService.create(dataAsignatura);
     }
 
     @Get('/:id')
