@@ -1,6 +1,6 @@
+import { Entity, PrimaryKey, Property, ManyToOne } from '@mikro-orm/core';
 import { Semestre } from './../semestre/semestre.entity';
 import { Estudiante } from './../estudiante/estudiante.entity';
-import { Entity, PrimaryKey, Property, ManyToOne } from '@mikro-orm/core';
 import { Asignatura } from './../asignatura/asignatura.entity';
 
 @Entity()

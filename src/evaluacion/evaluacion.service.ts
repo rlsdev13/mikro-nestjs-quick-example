@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { EntityRepository } from '@mikro-orm/core';
 
@@ -11,6 +11,46 @@ export class EvaluacionService {
     ){}
 
     async getAll() : Promise<Evaluacion[]> {
-        return await this.evaluacionRepo.findAll();
+        return await this.evaluacionRepo.find({}, {
+            fields : [
+                'nota',
+                'idAsignatura',
+                {
+                    idAsignatura : [
+                        'nombre'
+                    ]
+                },
+                'idEstudiante',
+                {
+                    idEstudiante : [ 
+                        'nombre',
+                        'apellidoPaterno',
+                        'apellidoMaterno'
+                    ] 
+                },
+                'idSemestre',
+                {
+                    idSemestre : [
+                        'nombre',
+                        'fechaFin',
+                        'fechaFin',
+                    ]
+                }
+
+            ]
+        } );
+    }
+
+    async getById( id : string ) : Promise<Evaluacion>{
+        return await this.evaluacionRepo.findOne( id , { populate : [ 'idAsignatura', 'idSemestre', 'idEstudiante' ] }  )
+    }
+
+    async deleteById( id : string ): Promise<Evaluacion>{
+        const evaluacion = await this.evaluacionRepo.findOne( id );
+        if(!evaluacion){
+            throw new NotFoundException;
+        }
+        await this.evaluacionRepo.removeAndFlush(evaluacion);
+        return evaluacion;
     }
 }

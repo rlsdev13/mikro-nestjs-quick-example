@@ -1,12 +1,11 @@
-import { Evaluacion } from './evaluacion.entity';
-import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { EvaluacionController } from './evaluacion.controller';
 import { EvaluacionService } from './evaluacion.service';
+import { OrmModule } from '../orm/orm.module';
 
 @Module({
-  imports : [ MikroOrmModule.forFeature([ Evaluacion ]) ],
+  imports : [OrmModule],
   controllers: [EvaluacionController],
-  providers: [EvaluacionService]
+  providers: [EvaluacionService],
 })
 export class EvaluacionModule {}

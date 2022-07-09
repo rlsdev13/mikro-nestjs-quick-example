@@ -1,0 +1,10 @@
+@host = http://localhost:3000
+
+### Get all
+GET {{host}}/evaluacion
+
+### Get by id
+GET {{host}}/evaluacion/625456c4e164693e4db4f67d
+
+###Delete by id
+DELETE {{host}}/evaluacion/625456c4e164693e4db4f67d
