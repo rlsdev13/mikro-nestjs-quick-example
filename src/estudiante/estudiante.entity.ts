@@ -1,11 +1,12 @@
 import { Collection, Entity, OneToMany, PrimaryKey, Property, Unique } from '@mikro-orm/core';
+import { ObjectId } from '@mikro-orm/mongodb';
 import { Evaluacion } from '../evaluacion/evaluacion.entity';
 
 @Entity()
 export class Estudiante{
 
-    @PrimaryKey({ type: 'uuid', defaultRaw: 'uuid_generate_v4()' })
-    uuid! : string;
+    @PrimaryKey({ type: ObjectId })
+    _id! : ObjectId;
 
     @Property()
     nombre : string;

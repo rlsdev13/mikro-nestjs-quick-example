@@ -4,7 +4,7 @@
 GET {{host}}/estudiante
 
 ### Get by id
-GET {{host}}/estudiante/625848450ec93775e3a1bd1a
+GET {{host}}/estudiante/62cb3679da6194626e2994a0
 
 ###Delete by id
 DELETE {{host}}/estudiante/625848450ec93775e3a1bd1a

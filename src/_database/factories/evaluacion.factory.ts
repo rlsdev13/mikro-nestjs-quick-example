@@ -5,6 +5,7 @@ export class EvaluacionFactory extends Factory<Evaluacion>{
     model = Evaluacion;
 
     protected definition( faker : Faker ): Partial<Evaluacion> {
+        faker.locale = 'es_MX';
         return{
             nota : faker.datatype.number({ min : 10 , max : 100 }).toString()
         }

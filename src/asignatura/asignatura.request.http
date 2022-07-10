@@ -4,7 +4,7 @@
 GET {{host}}/asignatura
 
 ### Get asignatura by ID
-GET {{host}}/asignatura/5465asd21asd64das
+GET {{host}}/asignatura/62cb3679da6194626e2994a5
 
 ### Create asignatura
 POST {{host}}/asignatura

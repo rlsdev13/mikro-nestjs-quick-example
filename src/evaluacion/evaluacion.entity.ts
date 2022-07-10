@@ -1,4 +1,5 @@
 import { Entity, PrimaryKey, Property, ManyToOne } from '@mikro-orm/core';
+import { ObjectId } from '@mikro-orm/mongodb';
 import { Semestre } from './../semestre/semestre.entity';
 import { Estudiante } from './../estudiante/estudiante.entity';
 import { Asignatura } from './../asignatura/asignatura.entity';
@@ -6,8 +7,8 @@ import { Asignatura } from './../asignatura/asignatura.entity';
 @Entity()
 export class Evaluacion{
 
-    @PrimaryKey({ type : 'uuid', defaultRaw : 'uuid_generate_v4()' })
-    uuid! : string;
+    @PrimaryKey({ type : ObjectId })
+    _id! : string;
     
     @Property()
     nota : string;
